@@ -17,6 +17,7 @@ class App extends Component{
     this.updatePlaylistName = this.updatePlaylistName.bind(this);
     this.savePlaylist = this.savePlaylist.bind(this);
     this.search = this.search.bind(this);
+    this.getAccessToken = this.getAccessToken.bind(this);
    }
    //add a new track to playlistTracks if it does not exist in playlistTracks yet
    addTrack(track) { 
@@ -58,6 +59,10 @@ class App extends Component{
     let response = await Spotify.search(searchTerm)
     this.setState({ searchResults: response })
   }
+
+  getAccessToken() {
+    Spotify.getAccessToken();
+  }
   
   render() {
     return (
@@ -66,6 +71,7 @@ class App extends Component{
         <div className='App'>
           <SearchBar
           onSearch={this.search}
+          onAuthenticate={this.getAccessToken}
           />
           <div className='App-playlist'>
             <SearchResults 

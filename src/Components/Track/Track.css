@@ -2,12 +2,13 @@
     display: flex;
     align-items: center;
     border-bottom: 1px solid rgba(256, 256, 256, 0.8);
+    padding: 2px;
   }
   
   .Track-action {
     cursor: pointer;
     padding: .5rem;
-    font-size: 1.05rem;
+    font-size: 1.50rem;
     transition: color .25s;
     border: 0px;
     background-color: rgba(0, 0, 0, 0);
@@ -34,4 +35,10 @@
     font-size: .83rem;
     font-weight: 300;
     color: rgba(256, 256, 256, 0.8);
+  }
+  .AudioPreview {
+    width: 100px;
+    margin: 0px 10px;
+    opacity: 30%;
+    display: flex;
   }

@@ -24,8 +24,6 @@ const Spotify = {
     },
     //fetches tracks from API and returns a formatted object containing track info
     async search(searchTerm) {
-        accessToken = this.getAccessToken();
-        
         const response = await fetch(`https://api.spotify.com/v1/search?type=track&q=${searchTerm}`, {
             headers: { Authorization: `Bearer ${accessToken}` }
         });
@@ -41,6 +39,7 @@ const Spotify = {
                 artist: track.artists[0].name,
                 album: track.album.name,
                 uri: track.uri,
+                preview_url: track["preview_url"],
             };
         });
         return tracksList;
